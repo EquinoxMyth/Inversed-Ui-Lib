@@ -1,53 +1,66 @@
-local library = {}
+-- services
+local input = game:GetService("UserInputService")
+local run = game:GetService("RunService")
+local tween = game:GetService("TweenService")
+local tweeninfo = TweenInfo.new
+-- additional
+local utility = {}
 
+
+
+
+
+
+local library = {}
+-- themes
+local objects = {}
 
 themes = {
-	Background = Color3.fromRGB(45, 45, 45)
-	
+Background = Color3.fromRGB(45, 45, 45),
+TextColor = Color3.fromRGB(255, 255, 255),
+Glow = Color3.fromRGB(0, 0, 0), 
+Accent = Color3.fromRGB(10, 10, 10), 
+LightContrast = Color3.fromRGB(20, 20, 20), 
+DarkContrast = Color3.fromRGB(14, 14, 14),  
 	
 }
 
-function library.Create(uiname)
-	text = uiname
-	local Ui = Instance.new("ScreenGui")
-	local Main = Instance.new("Frame")
-	local Top = Instance.new("Frame")
-	local Frame = Instance.new("Frame")
-	local TextLabel = Instance.new("TextLabel")
 
 
 
-	Ui.Name = "Ui"
-	Ui.Parent = game:WaitForChild"CoreGui"
-	Ui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+function utility:Create(instance, properties, children)
+    local object = Instance.new(instance)
+    
+    for i, v in pairs(properties or {}) do
+        object[i] = v
+        
+        if typeof(v) == "Color3" then 
+            local theme = utility:Find(themes, v)
+            
+            if theme then
+                objects[theme] = objects[theme] or {}
+                objects[theme][i] = objects[theme][i] or setmetatable({}, {_mode = "k"})
+                
+                table.insert(objects[theme][i], object)
+            end
+        end
+    end
+    
+    for i, module in pairs(children or {}) do
+        module.Parent = object
+    end
+    
+    return object
+end
 
-	Main.Name = uiname
-	Main.Parent = Ui
-	Main.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-	Main.Position = UDim2.new(0.256192952, 0, 0.364745021, 0)
-	Main.Size = UDim2.new(0, 561, 0, 346)
 
-	Top.Name = "Top"
-	Top.Parent = Main
-	Top.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-	Top.Position = UDim2.new(-0.000491545186, 0, -0.00230698776, 0)
-	Top.Size = UDim2.new(0, 561, 0, 42)
 
-	Frame.Parent = Top
-	Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Frame.BorderSizePixel = 0
-	Frame.Position = UDim2.new(0, 0, 0.857142866, 0)
-	Frame.Size = UDim2.new(0, 561, 0, 6)
-
-	TextLabel.Parent = Frame
-	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TextLabel.BackgroundTransparency = 1.000
-	TextLabel.Position = UDim2.new(0, 0, -6, 0)
-	TextLabel.Size = UDim2.new(0, 561, 0, 36)
-	TextLabel.Font = Enum.Font.SourceSans
-	TextLabel.Text = uiname
-	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-	TextLabel.TextSize = 14.000
+function library.new(title)
+	Name = title
+	local container = utility:Create("ScreenGui", {
+        Name = title,
+        Parent = game.CoreGui
+    }
 end
 
 

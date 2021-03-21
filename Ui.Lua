@@ -16,7 +16,8 @@ local library = {}
 
 
 function library.newWindow(UiName)
-  text = UiName
+ text = UiName
+UiName = text
   
 
 

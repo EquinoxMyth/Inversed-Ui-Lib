@@ -15,10 +15,7 @@ local library = {}
 ------------------
 
 
-for i,v in pairs(game.CoreGui:GetChildren()) do
-if v.Name == Name then
-    v:Destroy()
-end
+
 
 
 

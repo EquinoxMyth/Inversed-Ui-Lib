@@ -137,7 +137,7 @@ function library.newButton(title)
     TextButton.TextSize = 14.000
     TextButton.Text = nameb
 end
-return library;
+return library
 
 
 

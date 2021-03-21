@@ -1,11 +1,9 @@
----Init-----
-local player = game.Players.LocalPlayer
+
 -- services
 local input = game:GetService("UserInputService")
 local run = game:GetService("RunService")
 local tween = game:GetService("TweenService")
 local tweeninfo = TweenInfo.new
-local mouse = player:GetMouse()
 -------------------
 
 
@@ -17,7 +15,7 @@ local library = {}
 
 function library.new(UiName)
  text = UiName
-UiName = text
+
   
 
 
@@ -39,7 +37,7 @@ local AmbientShadow = Instance.new("ImageLabel")
 
 
 
-Templatre.Name = UiName
+Templatre.Name = text
 Templatre.Parent = game.CoreGui
 Templatre.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -65,7 +63,7 @@ TextLabel.BorderSizePixel = 0
 TextLabel.Position = UDim2.new(0.0151177347, 0, -0.016997084, 0)
 TextLabel.Size = UDim2.new(0, 201, 0, 28)
 TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Text = UiName
+TextLabel.Text = text
 TextLabel.TextColor3 = Color3.fromRGB(111, 111, 111)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
@@ -183,7 +181,6 @@ coroutine.wrap(NCVCRNL_fake_script)()
 
 
 return library;
-
 
 
 

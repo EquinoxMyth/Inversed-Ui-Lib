@@ -15,7 +15,7 @@ local library = {}
 ------------------
 
 
-function library.newWindow(UiName)
+function library.new(UiName)
  text = UiName
 UiName = text
   
@@ -39,7 +39,7 @@ local AmbientShadow = Instance.new("ImageLabel")
 
 
 
-Templatre.Name = text
+Templatre.Name = UiName
 Templatre.Parent = game.CoreGui
 Templatre.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -65,7 +65,7 @@ TextLabel.BorderSizePixel = 0
 TextLabel.Position = UDim2.new(0.0151177347, 0, -0.016997084, 0)
 TextLabel.Size = UDim2.new(0, 201, 0, 28)
 TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Text = title
+TextLabel.Text = UiName
 TextLabel.TextColor3 = Color3.fromRGB(111, 111, 111)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000

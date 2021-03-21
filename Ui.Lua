@@ -15,7 +15,10 @@ local library = {}
 ------------------
 
 
-
+for i,v in pairs(game.CoreGui:GetChildren()) do
+if v.Name == Name then
+    v:Destroy()
+end
 
 
 
@@ -125,4 +128,26 @@ coroutine.wrap(BHSKKW_fake_script)()
 end
 
 
+function library.newButton(title)
+    nameb = title
+    local TextButton = Instance.new("TextButton")
+    TextButton.Name = nameb
+    TextButton.Parent = game.StarterGui.Ui.Main.Sidebar
+    TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextButton.Size = UDim2.new(0, 200, 0, 50)
+    TextButton.Font = Enum.Font.SourceSans
+    TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton.TextSize = 14.000
+    TextButton.Text = nameb
+end
 return library;
+
+
+
+
+
+
+
+
+
+

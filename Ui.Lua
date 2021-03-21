@@ -19,71 +19,161 @@ function library.newWindow(UiName)
   text = UiName
   
 
-local Ui = Instance.new("ScreenGui")
-local Main = Instance.new("Frame")
-local Top = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
+
+
+local Templatre = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
-local Div = Instance.new("Frame")
+local TopBar = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local Frame_2 = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
-local Sidebar = Instance.new("Frame")
+local SideBar = Instance.new("Frame")
 local UICorner_3 = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local MenuSide = Instance.new("Frame")
 local UICorner_4 = Instance.new("UICorner")
+local UIGradient_2 = Instance.new("UIGradient")
+local AmbientShadow = Instance.new("ImageLabel")
 
 
 
-Ui.Name = text
-Ui.Parent = game.CoreGui
-Ui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Templatre.Name = text
+Templatre.Parent = game.CoreGui
+Templatre.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-Main.Name = "Main"
-Main.Parent = Ui
-Main.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-Main.Position = UDim2.new(0.109921649, 0, 0.31596452, 0)
-Main.Size = UDim2.new(0, 629, 0, 378)
+Frame.Parent = Templatre
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.Position = UDim2.new(0.0823062062, 0, 0.0421578139, 0)
+Frame.Size = UDim2.new(0, 506, 0, 423)
 
-Top.Name = "Top"
-Top.Parent = Main
-Top.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
-Top.Size = UDim2.new(0, 629, 0, 33)
+UICorner.CornerRadius = UDim.new(0, 3)
+UICorner.Parent = Frame
 
-TextLabel.Parent = Top
-TextLabel.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+TopBar.Name = "TopBar"
+TopBar.Parent = Frame
+TopBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TopBar.BackgroundTransparency = 1.000
+TopBar.Size = UDim2.new(0, 506, 0, 56)
+
+TextLabel.Parent = TopBar
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
-TextLabel.Size = UDim2.new(0, 629, 0, 31)
-TextLabel.Text = text
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BorderColor3 = Color3.fromRGB(180, 162, 171)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.0151177347, 0, -0.016997084, 0)
+TextLabel.Size = UDim2.new(0, 201, 0, 28)
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.Text = title
+TextLabel.TextColor3 = Color3.fromRGB(111, 111, 111)
+TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
+TextLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextWrapped = true
 
-UICorner.Parent = Top
+Frame_2.Parent = TopBar
+Frame_2.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+Frame_2.Position = UDim2.new(0, 0, 0.483002812, 0)
+Frame_2.Size = UDim2.new(0, 506, 0, 6)
 
-Div.Name = "Div"
-Div.Parent = Top
-Div.BackgroundColor3 = Color3.fromRGB(92, 92, 92)
-Div.Position = UDim2.new(0, 0, 0.818181813, 0)
-Div.Size = UDim2.new(0, 629, 0, 6)
+UICorner_2.CornerRadius = UDim.new(1, 5)
+UICorner_2.Parent = Frame_2
 
-UICorner_2.Parent = Div
+SideBar.Name = "SideBar"
+SideBar.Parent = Frame
+SideBar.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+SideBar.BorderColor3 = Color3.fromRGB(242, 235, 255)
+SideBar.Position = UDim2.new(-0.000219593872, 0, 0.0781280324, 0)
+SideBar.Size = UDim2.new(0, 153, 0, 389)
 
-Sidebar.Name = "Sidebar"
-Sidebar.Parent = Main
-Sidebar.BackgroundColor3 = Color3.fromRGB(78, 78, 78)
-Sidebar.Position = UDim2.new(0, 0, 0.0873015895, 0)
-Sidebar.Size = UDim2.new(0, 200, 0, 345)
+UICorner_3.CornerRadius = UDim.new(0, 2)
+UICorner_3.Parent = SideBar
 
-UICorner_3.Parent = Sidebar
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(182, 139, 177)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(182, 139, 177))}
+UIGradient.Parent = SideBar
 
-UICorner_4.Parent = Main
+MenuSide.Name = "MenuSide"
+MenuSide.Parent = Frame
+MenuSide.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MenuSide.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MenuSide.Position = UDim2.new(0.302151948, 0, 0.0781280324, 0)
+MenuSide.Size = UDim2.new(0, 353, 0, 389)
+
+UICorner_4.CornerRadius = UDim.new(0, 2)
+UICorner_4.Parent = MenuSide
+
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(182, 139, 177)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(182, 139, 177))}
+UIGradient_2.Parent = MenuSide
+
+AmbientShadow.Name = "AmbientShadow"
+AmbientShadow.Parent = Frame
+AmbientShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+AmbientShadow.BackgroundTransparency = 1.000
+AmbientShadow.Position = UDim2.new(0.504158974, 0, 0.495478779, 3)
+AmbientShadow.Size = UDim2.new(1.0409658, 5, 1.03747058, 5)
+AmbientShadow.ZIndex = 0
+AmbientShadow.Image = "rbxassetid://1316045217"
+AmbientShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+AmbientShadow.ImageTransparency = 0.800
+AmbientShadow.ScaleType = Enum.ScaleType.Slice
+AmbientShadow.SliceCenter = Rect.new(10, 10, 118, 118)
 
 
 
-local function UFSNZ_fake_script() 
-	local script = Instance.new('LocalScript', Main)
+local function NZVKNC_fake_script() -- TextLabel.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel)
 
-	local a=game:GetService("UserInputService")function dragify(b)dragToggle=nil;local c=0.50;dragInput=nil;dragStart=nil;local d=nil;function updateInput(e)local f=e.Position-dragStart;local g=UDim2.new(startPos.X.Scale,startPos.X.Offset+f.X,startPos.Y.Scale,startPos.Y.Offset+f.Y)game:GetService("TweenService"):Create(b,TweenInfo.new(0.30),{Position=g}):Play()end;b.InputBegan:Connect(function(e)if(e.UserInputType==Enum.UserInputType.MouseButton1 or e.UserInputType==Enum.UserInputType.Touch)and a:GetFocusedTextBox()==nil then dragToggle=true;dragStart=e.Position;startPos=b.Position;e.Changed:Connect(function()if e.UserInputState==Enum.UserInputState.End then dragToggle=false end end)end end)b.InputChanged:Connect(function(e)if e.UserInputType==Enum.UserInputType.MouseMovement or e.UserInputType==Enum.UserInputType.Touch then dragInput=e end end)game:GetService("UserInputService").InputChanged:Connect(function(e)if e==dragInput and dragToggle then updateInput(e)end end)end;dragify(script.Parent)
+	local ts = game:GetService("TweenService")
+	local ti = TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out) 
+	local tIn = {BackgroundColor3 = Color3.fromRGB(111, 111, 111), TextColor3 = Color3.fromRGB(248, 248, 248)} 
+	local tOut = {BackgroundColor3 = Color3.fromRGB(248, 248, 248), TextColor3 = Color3.fromRGB(111, 111, 111)} --colors are up to you
+	local createIn = ts:Create(script.Parent, ti, tIn) --when mouse ENTERS button
+	local createOut = ts:Create(script.Parent, ti, tOut) --when mouse LEAVES button
+	
+	
+	script.Parent.MouseEnter:Connect(function()
+		createIn:Play()
+		
+	
+	end)
+	
+	script.Parent.MouseLeave:Connect(function()
+	
+		createOut:Play()
+	
+	end)
 	
 end
-coroutine.wrap(UFSNZ_fake_script)()
+coroutine.wrap(NZVKNC_fake_script)()
+local function NCVCRNL_fake_script() -- Frame.LocalScript 
+	local script = Instance.new('LocalScript', Frame)
+
+	local ui = script.Parent 
+	local minus = Enum.KeyCode.LeftAlt
+	
+	local UIS = game:GetService("UserInputService")
+	local open = true
+	
+	local a=game:GetService("UserInputService")function dragify(b)dragToggle=nil;local c=0.50;dragInput=nil;dragStart=nil;local d=nil;function updateInput(e)local f=e.Position-dragStart;local g=UDim2.new(startPos.X.Scale,startPos.X.Offset+f.X,startPos.Y.Scale,startPos.Y.Offset+f.Y)game:GetService("TweenService"):Create(b,TweenInfo.new(0.30),{Position=g}):Play()end;b.InputBegan:Connect(function(e)if(e.UserInputType==Enum.UserInputType.MouseButton1 or e.UserInputType==Enum.UserInputType.Touch)and a:GetFocusedTextBox()==nil then dragToggle=true;dragStart=e.Position;startPos=b.Position;e.Changed:Connect(function()if e.UserInputState==Enum.UserInputState.End then dragToggle=false end end)end end)b.InputChanged:Connect(function(e)if e.UserInputType==Enum.UserInputType.MouseMovement or e.UserInputType==Enum.UserInputType.Touch then dragInput=e end end)game:GetService("UserInputService").InputChanged:Connect(function(e)if e==dragInput and dragToggle then updateInput(e)end end)end;dragify(script.Parent)
+	
+	
+	UIS.InputBegan:Connect(function(key, gp)
+		if key.KeyCode == minus then
+			if UIS:GetFocusedTextBox() == nil then
+				if open == false then
+					open = true 
+					ui.Visible = true
+				elseif open == true then
+					open = false
+					ui.Visible = false
+				end
+			end
+		end
+	end)
+	
+end
+coroutine.wrap(NCVCRNL_fake_script)()
+
 
  end
 
